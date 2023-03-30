@@ -1,16 +1,24 @@
-name: CI Pipeline
-on: [push]
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
-  Lint-Test-Build-Application:
+  build:
     runs-on: self-hosted
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "📦 Install Dependencies"
-      - run: yarn install
-      - run: echo "🧪 Lint Code"
-      - run: yarn lint
-      - run: echo "💉 Test Code"
-      - run: yarn test
-      - run: echo "📦 Build Application"
-      - run: yarn build
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.2
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: npm install
+      - name: Lint code
+        run: npm run lint
+      - name: Test code
+        run: npm run test
+      - name: Build code
+        run: npm run build
