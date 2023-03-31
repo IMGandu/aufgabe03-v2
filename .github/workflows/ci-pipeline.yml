@@ -10,7 +10,7 @@ jobs:
       - run: npm install
       - run: echo "🧪 Lint Code"
       - run: npm run lint
-      - run: echo "💉 Test Code"
+      - run: echo "💉 Testing Code"
       - run: npm run test
       - run: echo "📦 Build Application"
       - run: npm run build
