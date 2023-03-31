@@ -7,7 +7,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Setup Node.js environment
-        uses: actions/setup-node@.
+        uses: actions/setup-node@v12.22.9
         with:
           node-version: 14
       - name: Install dependencies
