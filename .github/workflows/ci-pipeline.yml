@@ -4,13 +4,18 @@ jobs:
   Lint-Test-Build-Application:
     runs-on: self-hosted
     steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
       - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "📦 Install Dependencies"
-      - run: yarn install
-      - run: echo "🧪 Lint Code"
-      - run: yarn lint
-      - run: echo "💉 Test Code"
-      - run: yarn test
-      - run: echo "📦 Build Application"
-      - run: yarn build
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Lint Code
+        run: npm run lint
+      - name: Test Code
+        run: npm run test
+      - name: Build Application
+        run: npm run build
+
