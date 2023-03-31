@@ -7,14 +7,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: '14.x'
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Install Dependencies
         run: npm install
       - name: Lint Code
         run: npm run lint
-      - name: Test Code
+      - name: Testing Code
         run: npm run test
       - name: Build Application
         run: npm run build
