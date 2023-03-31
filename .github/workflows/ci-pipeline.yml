@@ -1,0 +1,16 @@
+name: CI Pipeline
+on: [push]
+jobs:
+  Lint-Test-Build-Application:
+    runs-on: self-hosted
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "📦 Install Dependencies"
+      - run: yarn install
+      - run: echo "🧪 Lint Code"
+      - run: yarn lint
+      - run: echo "💉 Test Code"
+      - run: yarn test
+      - run: echo "📦 Build Application"
+      - run: yarn build
