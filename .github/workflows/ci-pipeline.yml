@@ -14,7 +14,7 @@ jobs:
         run: npm install
       - name: Lint Code
         run: npm run lint
-      - name: Test Codes
+      - name: Test Code
       - name: Testing Code
         run: npm run test
       - name: Build Application
