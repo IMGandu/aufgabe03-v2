@@ -14,11 +14,8 @@ jobs:
         run: npm install
       - name: Lint Code
         run: npm run lint
-<<<<<<< HEAD
       - name: Test Codes
-=======
       - name: Testing Code
->>>>>>> 2a8341fcdfb4750a3cdf6a6b4a36e9d6401e8ce4
         run: npm run test
       - name: Build Application
         run: npm run build
