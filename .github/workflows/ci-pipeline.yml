@@ -19,7 +19,7 @@ jobs:
       - name: Build Application
         run: npm run build
   Build-and-Push-Docker-Image:
-    runs-on: self-hosted
+    runs-on: label-1
     needs: Lint-Test-Build-Application
     steps:
       - name: Check out repository code
